@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Game playing Demo</title>
+</head>
+<style>
+      /* ---- reset ---- */
+      body {
+            margin: 0;
+            width: 100vw;
+            font: normal 75% Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            /* overflow-y: hidden; */
+      }
+      body::-webkit-scrollbar{
+            display: none;
+      }
+
+      canvas {
+            display: block;
+            z-index: 10;
+           
+      }
+
+      /* ---- particles.js container ---- */
+      #particles-js {
+            position: absolute;
+            width: 100%;
+            height:100vh;
+            background-color: #dae7ea;
+            /* background-image: url(""); */
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+            /* background-position: 50% 50%; */
+           
+      }
+
+      /* ---- stats.js ---- */
+      .count-particles {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            
+
+      }
+
+      /* #stats,
+      .count-particles {
+            -webkit-user-select: none;
+      } */
+
+      #stats {
+            border-radius: 3px 3px 0 0;
+            overflow: hidden;
+      }
+
+      .count-particles {
+            border-radius: 0 0 3px 3px;
+            z-index: 1;
+
+      }
+
+      .container{
+            display: flex;
+            width: 100%;
+            max-height: 100vh;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            overflow-x: hidden;
+            /* background-color: aquamarine; */
+      
+
+
+        }
+        .container::-webkit-scrollbar{
+            display: none;
+        }
+        .container a{
+            margin: 40px 20px 20px 20px ;
+            border-radius: 10px;
+        }
+        .card img{
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+        }
+        a h3{
+            font-size: 30px;
+            text-align: center;
+            color: rgb(3, 3, 43);
+        }
+
+        @media (max-width:800px) {
+            #particles-js{
+                  /* height: 300vh; */
+                  background-color: aqua;
+            }
+            
+        }
+        @media (max-width:500px) {
+            #particles-js{
+                  /* height: 300vh; */
+                  background-color: rgb(13, 108, 108);
+            }
+            a h3{
+            color: rgb(241, 241, 245);
+        }
+
+            
+        }
+      
+</style>
+
+<body>
+      <!-- particles.js container -->
+      <div id="particles-js"></div>
+
+      <!-- stats - count particles -->
+      <div class="count-particles">
+         
+
+            <div class="container count-particles">
+                  <a href="Shooting Game/index.html">
+                  <div class="card">
+                      <img src="Whether App/images/weather-demo.png" alt="weather-demo">
+                    
+                      <h3><span>Demo APP</span></h3>
+                  </div>
+                  </a>
+
+                 
+
+                       
+
+                        
+      
+
+      
+                     
+      
+                  <!-- <a href="Task-1/index.html">
+                      <div class="card">
+                          <img src="imgs/task1.png" alt="todo-app">
+                          <h3>Task-1 &gt;&gt; <span>TODO WebApp</span></h3>
+                      </div>
+                  </a> -->
+      
+                 
+      
+                  
+              </div>
+           
+       </div>
+       
+
+
+
+
+
+      <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <!-- stats.js lib -->
+      <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+      <script>
+            particlesJS("particles-js", {"particles":{"number":{"value":132,"density":{"enable":true,"value_area":1103.7179527608712}},"color":{"value":"#040717"},"shape":{"type":"circle","stroke":{"width":1,"color":"#e5dcdc"},"polygon":{"nb_sides":8},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":48,"random":true,"anim":{"enable":false,"speed":0,"size_min":0,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"bubble"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);
+      </script>
+</body>
+
+</html>
